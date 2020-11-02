@@ -92,10 +92,11 @@ while is_running:
 
 
 # We created a list for our templates
-part_of_speech_list_zoo_story = ["adjective".lower(), "noun".lower(), "past tense verb".lower(), "adverb".lower(), "adjective".lower(), "noun".lower(), "noun".lower(), "adjective".lower(), "verb".lower(), "adverb".lower(), "past tense verb".lower(), "adjective".lower()]
-part_of_speech_list_camp_story = ["proper noun".title(), "noun".lower(), "plural noun".lower(), "adjective".lower(), "adjective".lower(), "past tense verb".lower(), "noun".lower(), "verb".lower(), "exclamation".lower(), "past tense verb".lower(), "noun".lower(), "verb ending in -ing".lower(), "noun".lower(), "past tense verb".lower(), "adjective".lower()]
+part_of_speech_list_zoo_story = ["adjective".lower().strip(), "noun".lower().strip(), "past tense verb".lower().strip(), "adverb".lower().strip(), "adjective".lower().strip(), "noun".lower().strip(), "noun".lower().strip(), "adjective".lower().strip(), "verb".lower().strip(), "adverb".lower().strip(), "past tense verb".lower().strip(), "adjective".lower().strip()]
+part_of_speech_list_camp_story = ["proper noun".title().strip(), "noun".lower().strip(), "plural noun".lower().strip(), "adjective".lower().strip(), "adjective".lower().strip(), "past tense verb".lower().strip(), "noun".lower().strip(), "verb".lower().strip(), "exclamation".lower().strip(), "past tense verb".lower().strip(), "noun".lower().strip(), "verb ending in -ing".lower().strip(), "noun".lower().strip(), "past tense verb".lower().strip(), "adjective".lower().strip()]
 # We put a .title on the proper noun since proper nouns need to have the first letter capitalized. None of the other variables in either madlib requires a title
-#
+# We .lowered everything else since nothing else needs capitalization.
+# We also instated a .strip on everything since we wanted to remove the white spaces that may have been accidental.
 
 # We will start with our first Madlib being the Zoo one.
 def zoo_mad_lib():
@@ -123,10 +124,10 @@ def parts_of_speech_list_user_answers(list_of_parts_of_speech):
     a = 0
     # List starts at 0 like shown above in the lists.
     while a < len(list_of_parts_of_speech):
-    # If the statement above is true, then 'a' or the the list value should be lower than the length or amount of the container.
-        word_inputed = input(f"{list_of_parts_of_speech[a]}?")
-        if not word_inputed.lower().isalpha():
-            print("Only use letters please, and only use one word")
+    # If the statement above is true, then 'a' or the list of values should be lower than the length or amount of the container or whole list of the parts of speech.
+        word_inputted = input(f"{list_of_parts_of_speech[a]}?")
+        if not word_inputted.lower().isalpha():
+            print("Make sure you only type in one word per prompt.")
         else:
-            list_of_parts_of_speech[a] = word_inputed
+            list_of_parts_of_speech[a] = word_inputted
             a += 1
