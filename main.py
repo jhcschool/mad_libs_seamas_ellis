@@ -40,7 +40,7 @@
 # adverb_2 = input("Enter an adverb: ").lower()
 # verb_past_tense_2 = input("Enter a past tense verb: ").lower()
 # adjective_4 = input("Enter an adjective: ").lower()
-#The lower command was used for all inputted words since all of them do not require a capital letter.
+# The lower command was used for all inputted words since all of them do not require a capital letter.
 
 # # Edge Cases:
 # # line_1 = 'Today I went to the zoo. I saw a(n) {adjective_1} {noun_1} jumping up and down in its tree.'
@@ -74,7 +74,7 @@ print("Please choose which Madlib you would like by selecting '1' or '2'")
 
 # We created a list for our templates
 part_of_speech_list_zoo_story = ["adjective", "noun", "past tense verb", "adverb", "adjective", "noun", "noun", "adjective", "verb", "adverb", "past tense verb", "adjective"]
-part_of_speech_list_camp_story = ["proper noun", "noun", "adjective", "adjective", "past tense verb", "noun", "verb", "exclamation", "past tense verb", "noun", "verb ending in -ing", "noun", "past tense verb", "adjective"]
+part_of_speech_list_camp_story = ["proper noun", "noun", "plural noun", "adjective", "adjective", "past tense verb", "noun", "verb", "exclamation", "past tense verb", "noun", "verb ending in -ing", "noun", "past tense verb", "adjective"]
 
 # We will start with our first Madlib being the Zoo one.
 def zoo_mad_lib():
@@ -87,8 +87,13 @@ def zoo_mad_lib():
 
 # Secondly, we will create the function for our second Madlib, the camping one.
 def camp_mad_lib():
-    print(f"")
-
-
+    print(f"Dear {part_of_speech_list_camp_story[0]},")
+    print(f"How is camp? How is the {part_of_speech_list_camp_story[1]}? What is your counselor's name? How many {part_of_speech_list_camp_story[2]} are in your cabin?")
+    print(f"What does the {part_of_speech_list_camp_story[3]} taste like? Is it {part_of_speech_list_camp_story[4]}? We are writing to let you know that things have been a little")
+    print(f"{part_of_speech_list_camp_story[5]} since you have left. The other night, we {part_of_speech_list_camp_story[6]} a {part_of_speech_list_camp_story[7]}. We got up to {part_of_speech_list_camp_story[8]} what it was")
+    print(f"and {part_of_speech_list_camp_story[9]}! You won't believe what we {part_of_speech_list_camp_story[10]}. It was a {part_of_speech_list_camp_story[11]} {part_of_speech_list_camp_story[12]} on your")
+    print(f"{part_of_speech_list_camp_story[13]}! But don't worry, we {part_of_speech_list_camp_story[14]} it right away and now everything is just {part_of_speech_list_camp_story[15]} at home and all set for your return.")
+    print("Love,")
+    print("Your family")
 
 
