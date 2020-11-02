@@ -13,12 +13,12 @@
 # Here's the 2nd madlib:
 
 # Found @: https://www.joyintheworks.com/wp-content/uploads/2015/04/Letter-from-Home-to-Camp-Picture.jpg
-# Dear {proper_noun},
-# How is camp? How is the {noun}? What is your counselor's name? How many {plural_noun} are in your cabin?
-# What does the {noun} taste like? Is it {adjective}? We are writing to let you know that things have been a little
-# {adjective} since you have left. The other night, we {past_tense_verb} a {noun}. We got up to {verb} what it was
-# and {exclamation}! You won't believe what we {verb_past_tense}. It was a {noun} {verb_ending_w/_ing} on your
-# {noun}! But don't worry, we {verb_past_tense} it right away and now everything is just {adjective} at home and all
+# Dear {proper_noun}, (1)
+# How is camp? How is the {noun}? What is your counselor's name? How many {plural_noun} are in your cabin? (2)
+# What does the {noun} taste like? Is it {adjective}? We are writing to let you know that things have been a little (2)
+# {adjective} since you have left. The other night, we {past_tense_verb} a {noun}. We got up to {verb} what it was (4)
+# and {exclamation}! You won't believe what we {verb_past_tense}. It was a {noun} {verb_ending_w/_ing} on your (4)
+# {noun}! But don't worry, we {verb_past_tense} it right away and now everything is just {adjective} at home and all (3)
 # set for your return.
 # Love,
 # Your family
@@ -68,8 +68,11 @@
 
 # Introduction of our game:
 print("Welcome to the coolest Madlib out there.")
-print("... Presented by Seamas and Ellis")
+print("")
+print("Presented by Seamas and Ellis")
+print("")
 print("There are two Madlibs available. Option one is about a zoo, and option two is about camp.")
+print("")
 
 # Now, we need the user to select which story they want.
 # Similarly to what we did below, we looped the function in order to get a valid input from the user.
@@ -83,11 +86,13 @@ part_of_speech_list_zoo_story = ["adjective".lower().strip(), "noun".lower().str
                                  "adverb".lower().strip(), "past tense verb".lower().strip(),
                                  "adjective".lower().strip()]
 part_of_speech_list_camp_story = ["proper noun".title().strip(), "noun".lower().strip(), "plural noun".lower().strip(),
-                                  "adjective".lower().strip(), "adjective".lower().strip(),
+                                  "adjective".lower().strip(), "past tense verb".lower().strip(), "adjective".lower().strip(),
                                   "past tense verb".lower().strip(), "noun".lower().strip(), "verb".lower().strip(),
                                   "exclamation".lower().strip(), "past tense verb".lower().strip(),
                                   "noun".lower().strip(), "verb ending in -ing".lower().strip(), "noun".lower().strip(),
                                   "past tense verb".lower().strip(), "adjective".lower().strip()]
+
+
 
 
 # We put a .title on the proper noun since proper nouns need to have the first letter capitalized. None of the other variables in either madlib requires a title
@@ -136,7 +141,7 @@ def parts_of_speech_list_user_answers(list_of_parts_of_speech):
         # If the statement above is true, then 'a' or the list of values should be lower than the length or amount of the container or whole list of the parts of speech.
         word_inputted = input(f"{list_of_parts_of_speech[a]}?")
         if not word_inputted.lower().isalpha():
-            print("Make sure you only type in one word per prompt.")
+            print("Make sure you type an alphabetical value when prompted.")
         else:
             list_of_parts_of_speech[a] = word_inputted
             a += 1
@@ -145,14 +150,17 @@ def parts_of_speech_list_user_answers(list_of_parts_of_speech):
 madlib_selection = 0
 # We need to start the story at option null or 0 then proceed let the user choose madlib "one" or "two"
 while madlib_selection < 1:
-    madlib_choice = input("Choose 'one' or 'two': ")
-    if madlib_choice == "one".title().strip():
-        parts_of_speech_list_user_answers(zoo_mad_lib)
-        zoo_mad_lib()
-        madlib_selection += 1
+    madlib_choice = input("Choose option 'one' or 'two': ")
+    # Our first choice or the zoo madlib.
+    if madlib_choice == "one":
+        parts_of_speech_list_user_answers(part_of_speech_list_zoo_story)
+        # Once the user inputs the values we need it to output or print.
+        print(zoo_mad_lib())
+
+    # Our second choice or the camp madlib.
+    elif madlib_choice == "two":
+        parts_of_speech_list_user_answers(part_of_speech_list_camp_story)
+        # Once the user inputs the values we need it to output or print.
+        print(camp_mad_lib())
     else:
-        if madlib_choice == "two".title().strip():
-            parts_of_speech_list_user_answers(camp_mad_lib)
-            madlib_selection += 1
-
-
+        print("Choose option 'one' or 'two': ")
