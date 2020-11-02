@@ -73,8 +73,10 @@ print("There are two Madlibs available. Option one is about a zoo, and option tw
 print("Please choose which Madlib you would like by selecting '1' or '2'")
 
 # We created a list for our templates
-part_of_speech_list_zoo_story = ["adjective", "noun", "past tense verb", "adverb", "adjective", "noun", "noun", "adjective", "verb", "adverb", "past tense verb", "adjective"]
-part_of_speech_list_camp_story = ["proper noun", "noun", "plural noun", "adjective", "adjective", "past tense verb", "noun", "verb", "exclamation", "past tense verb", "noun", "verb ending in -ing", "noun", "past tense verb", "adjective"]
+part_of_speech_list_zoo_story = ["adjective".lower(), "noun".lower(), "past tense verb".lower(), "adverb".lower(), "adjective".lower(), "noun".lower(), "noun".lower(), "adjective".lower(), "verb".lower(), "adverb".lower(), "past tense verb".lower(), "adjective".lower()]
+part_of_speech_list_camp_story = ["proper noun".title(), "noun".lower(), "plural noun".lower(), "adjective".lower(), "adjective".lower(), "past tense verb".lower(), "noun".lower(), "verb".lower(), "exclamation".lower(), "past tense verb".lower(), "noun".lower(), "verb ending in -ing".lower(), "noun".lower(), "past tense verb".lower(), "adjective".lower()]
+# We put a .title on the proper noun since proper nouns need to have the first letter capitalized. None of the other variables in either madlib requires a title
+#
 
 # We will start with our first Madlib being the Zoo one.
 def zoo_mad_lib():
@@ -98,14 +100,14 @@ def camp_mad_lib():
 
 # We need to make sure that our lists work properly. In order to do so, we must start our list at x = 0 and loop it so every user input increases one unit in the lists.
 # Therefore, we created a definition (a function) to take the formatted parts of speech and change them into the user inputs.
-def parts_of_speech_list_user_answers(parts_of_speech_list):
+def parts_of_speech_list_user_answers(list_of_parts_of_speech):
     a = 0
-    # List starts at 0 like shown above.
-    while a < len(parts_of_speech_list):
-    # If the statement above is true, then 'a' or the the list value should be lower
-        letters = input(f"{parts_of_speech_list[a]}?")
-        if not letters.lower().isalpha():
+    # List starts at 0 like shown above in the lists.
+    while a < len(list_of_parts_of_speech):
+    # If the statement above is true, then 'a' or the the list value should be lower than the length or amount of the container.
+        word_inputed = input(f"{list_of_parts_of_speech[a]}?")
+        if not word_inputed.lower().isalpha():
             print("Only use letters please, and only use one word")
         else:
-            parts_of_speech_list[a] = letters
+            list_of_parts_of_speech[a] = word_inputed
             a += 1
