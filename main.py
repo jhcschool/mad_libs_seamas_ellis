@@ -76,7 +76,19 @@ print("Please choose which Madlib you would like by selecting '1' or '2'")
 part_of_speech_list_zoo_story = ["adjective", "noun", "past tense verb", "adverb", "adjective", "noun", "noun", "adjective", "verb", "adverb", "past tense verb", "adjective"]
 part_of_speech_list_camp_story = ["proper noun", "noun", "adjective", "adjective", "past tense verb", "noun", "verb", "exclamation", "past tense verb", "noun", "verb ending in -ing", "noun", "past tense verb", "adjective"]
 
+# We will start with our first Madlib being the Zoo one.
 def zoo_mad_lib():
     print(f"Today I went to the zoo. I saw a(n) {part_of_speech_list_zoo_story[0]} {part_of_speech_list_zoo_story[1]} jumping up and down in its tree.")
+    print(f"He {part_of_speech_list_zoo_story[2]} {part_of_speech_list_zoo_story[3]} through the large tunnel that led to its {part_of_speech_list_zoo_story[4]}")
+    print(f"{part_of_speech_list_zoo_story[5]}. I got some peanuts and passed them through the cage to a gigantic gray {part_of_speech_list_zoo_story[6]}")
+    print(f"towering above my head. Feeding that animal made me hungry. I went to get a {part_of_speech_list_zoo_story[7]} scoop")
+    print(f"of ice cream. It filled my stomach. Afterwards I had to {part_of_speech_list_zoo_story[8]} {part_of_speech_list_zoo_story[9]} to catch our bus.")
+    print(f"When I got home I {part_of_speech_list_zoo_story[10]} my mom for a {part_of_speech_list_zoo_story[11]} day at the zoo.")
+
+# Secondly, we will create the function for our second Madlib, the camping one.
+def camp_mad_lib():
+    print(f"")
+
+
 
 
