@@ -70,7 +70,26 @@
 print("Welcome to the coolest Madlib out there.")
 print("... Presented by Seamas and Ellis")
 print("There are two Madlibs available. Option one is about a zoo, and option two is about camp.")
-print("Please choose which Madlib you would like by selecting '1' or '2'")
+
+is_running = True
+while is_running:
+    print("Please choose which Madlib you would like by selecting 'One' or 'Two'")
+    user_command = input("Choose 'One' or 'Two' or type 'Turn off' to exit")
+
+    if user_command == "Turn off":
+        is_running = False
+        print("Turning off")
+    elif user_command != "Turn off":
+        user_command = input("'One' or 'Two'?")
+
+    if user_command == "One":
+        answer1 = input()
+        print()
+
+    elif user_command == "Two":
+        answer2 = input()
+        print()
+
 
 # We created a list for our templates
 part_of_speech_list_zoo_story = ["adjective".lower(), "noun".lower(), "past tense verb".lower(), "adverb".lower(), "adjective".lower(), "noun".lower(), "noun".lower(), "adjective".lower(), "verb".lower(), "adverb".lower(), "past tense verb".lower(), "adjective".lower()]
